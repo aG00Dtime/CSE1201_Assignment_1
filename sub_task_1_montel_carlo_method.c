@@ -4,7 +4,7 @@
 #include <math.h>
 #include <conio.h>
 int points,i,inside=0;
-double x,y,r,pi;
+double x,y,r,py;
 
 void main(void){
 
@@ -31,12 +31,12 @@ for (i=0;i<points;i++){
         inside++;       
     }  
 
-    pi=4 * (double) inside / (double)points; //4 * inside count / total sample size = approx pi
-    printf("Calculation #%d : %f\n",i+1,pi);     
+    py=4 * (double) inside / (double)points; //4 * inside count / total sample size = approx py
+    printf("Calculation #%d : %f\n",i+1,py);     
 }
 
 
-printf("Final calculation of Pi is after %d iterations is approximately:  %f\n",points,pi);
+printf("Final calculation of Pi is after %d iterations is approximately:  %f\n",points,py);
 printf("Press any key to exit...");
 getch();
 
