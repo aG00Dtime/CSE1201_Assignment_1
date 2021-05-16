@@ -3,6 +3,7 @@
 #include <stdlib.h>
 #include <time.h>
 #include <string.h>
+#include <conio.h>
 
 // prototypes
 int word_selector ();
@@ -48,6 +49,8 @@ while (playing){
     // check to see if guesses are used up or player won
     if (correct == word_length){
         printf("\n\nYOU WIN\n\n");
+        printf("Press any key to exit");
+        getch();
         playing=0;
         continue;
     }
@@ -55,6 +58,8 @@ while (playing){
     if (guessed==5)
     {
         printf("\n\nYou lose\n\n");
+        printf("Press any key to exit");
+        getch();
         playing=0;
         continue;
     }
@@ -78,6 +83,10 @@ while (playing){
             correct++;        
         }
     } 
+
+    // Clear the screen after guessing
+    system("cls");
+
     // check if guess was incorrect 
     if (correct>guess_check){        
         printf("\nCorrect guess!");
@@ -98,6 +107,7 @@ while (playing){
                 printf("_");            
             } 
     }
+    
 }  
 
 return 0;
