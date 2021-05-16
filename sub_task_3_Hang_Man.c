@@ -8,8 +8,7 @@
 int word_selector ();
 int print_hangman(int x);
 
-
-//variables
+// variables
 char array[][10]={"dog","cow","computer","onion","house","apple","pizza","soda","chicken","potato"};
 char letter_guessed[10];
 
@@ -27,31 +26,32 @@ void  main (void){
 word_index=word_selector();
 int word_length=strlen(array[word_index]);
 
-
+// intro screen with word list
 print_hangman(10);
+
 // word_hidden is used to check what letters have been guessed
 for ( i = 0; i < word_length; i++){
     word_hidden[i]=0;
 }
 
-//print the initial screen
+// print the initial screen with the word blanks
 print_hangman(0);
-
 for(i=0;i<word_length;i++){
     if(!word_hidden[i]){
         printf("_");
     }
 }
 
-//game loop
+// game loop
 while (playing){  
 
-    //check to see if guesses are used up or player won
+    // check to see if guesses are used up or player won
     if (correct == word_length){
         printf("\n\nYOU WIN\n\n");
         playing=0;
         continue;
     }
+
     if (guessed==5)
     {
         printf("\n\nYou lose\n\n");
@@ -63,34 +63,34 @@ while (playing){
     printf("\n\nRemaining guesses : %d",5-guessed);
     printf("\n\nEnter a letter:");
     scanf(" %c",letter_guessed);
-    
 
+    // compare old and new correct vars to check for incorrect guess
     guess_check=correct;
 
+    // loop through letters to see it it matches player guess
     for(i=0;i<word_length;i++){       
         if(word_hidden[i]==1){
             continue;
         }
+        // increase correct count if letter exists in the word
         if (letter_guessed[0]==array[word_index][i]){
             word_hidden[i]=1;
             correct++;        
         }
     } 
-
+    // check if guess was incorrect 
     if (correct>guess_check){        
         printf("\nCorrect guess!");
     }
     else{
         printf("\nIncorrect Guess!");
         guessed++;
-        hangman++;   
-        
+        hangman++;         
     }
 
+    // print new hangman image and correctly guessed letters
     print_hangman(hangman);
-
     for(i=0;i<word_length;i++){
-
         if (word_hidden[i]){
                 printf("%c",array[word_index][i]);
             }
@@ -125,9 +125,7 @@ int print_hangman(int x){
         printf("\n|");
         printf("\n|");
         printf("\n|");
-        printf("\n+----+\n");
-
-        
+        printf("\n+----+\n");        
     }
 
     else if (x==2){
@@ -141,6 +139,7 @@ int print_hangman(int x){
         printf("\n|");
         printf("\n+----+\n");
     }
+
     else if (x==3){
         printf("\n");
         printf("\n+----+");
@@ -164,6 +163,7 @@ int print_hangman(int x){
         printf("\n|");
         printf("\n+----+\n");
     }
+
     else if (x==5){
         printf("\n");
         printf("\n+----+");
@@ -175,6 +175,7 @@ int print_hangman(int x){
         printf("\n|");
         printf("\n+----+\n");
     }
+
     else if (x==10){
         printf("\n *** HANG MAN ******************************************************");
         printf("\n      +----+");
@@ -189,9 +190,8 @@ int print_hangman(int x){
         printf("\n Words: dog,cow,computer,onion,house,apple,pizza,soda,chicken,potato\n");
         printf("\n ********************************************************************  \n");
     }
-
-
 }
+
 // generate a number between 0 and 10
 int word_selector(){   
 
