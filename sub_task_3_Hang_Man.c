@@ -64,7 +64,7 @@ while (playing){
     printf("\n\nEnter a letter:");
     scanf(" %c",letter_guessed);
 
-    // compare old and new correct vars to check for incorrect guess
+    // save correct vars to check for incorrect guess
     guess_check=correct;
 
     // loop through letters to see it it matches player guess
