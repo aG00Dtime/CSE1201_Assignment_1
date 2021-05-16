@@ -32,7 +32,7 @@ int main() {
 
   // intro screen with word list
   print_hangman(10);
-  printf("Press any key to begin...");
+  printf(" Press any key to begin...");
   getch();
   system("cls");
 
@@ -45,7 +45,7 @@ int main() {
   print_hangman(0);
   for (i = 0; i < word_length; i++) {
     if (!word_hidden[i]) {
-      printf("_");
+      printf(" _ ");
     }
   }
 
@@ -54,24 +54,25 @@ int main() {
 
     // check to see if guesses are used up or player won
     if (correct == word_length) {
-      printf("\n\nYOU WIN!\n\n");
-      printf("Press any key to exit...");
+      printf("\n\n YOU WIN!\n\n");
+      printf(" Press any key to exit...");
       getch();
       playing = 0;
       continue;
     }
 
     if (guessed == 5) {
-      printf("\n\nYou lose!\n\n");
-      printf("Press any key to exit...");
+      printf("\n\n You lose!\n\n");
+      printf("\n The word was %s ! \n",words[word_index]);
+      printf(" Press any key to exit...");
       getch();
       playing = 0;
       continue;
     }
 
     // ask player to guess
-    printf("\n\nRemaining guesses : %d", 5 - guessed);
-    printf("\n\nEnter a letter:");
+    printf("\n\n Remaining guesses : %d", 5 - guessed);
+    printf("\n\n Enter a letter:");
     scanf(" %c", letter);
 
     // save correct vars to check for incorrect guess
@@ -94,9 +95,9 @@ int main() {
 
     // check if guess was incorrect
     if (correct > guess_check) {
-      printf("\nCorrect guess!");
+      printf("\n Correct guess!");
     } else {
-      printf("\nIncorrect Guess!");
+      printf("\n Incorrect Guess!");
       guessed++;
       hangman++;
     }
@@ -105,9 +106,9 @@ int main() {
     print_hangman(hangman);
     for (i = 0; i < word_length; i++) {
       if (word_hidden[i]) {
-        printf("%c", words[word_index][i]);
+        printf(" %c ", words[word_index][i]);
       } else {
-        printf("_");
+        printf(" _ ");
       }
     }
   }
@@ -120,69 +121,69 @@ int print_hangman(int x) {
 
   if (x == 0) {
     printf("\n");
-    printf("\n+----+");
-    printf("\n|    |");
-    printf("\n|");
-    printf("\n|");
-    printf("\n|");
-    printf("\n|");
-    printf("\n|");
-    printf("\n+----+\n");
+    printf("\n +----+");
+    printf("\n |    |");
+    printf("\n |");
+    printf("\n |");
+    printf("\n |");
+    printf("\n |");
+    printf("\n |");
+    printf("\n +----+\n");
   } 
   else if (x == 1) {
     printf("\n");
-    printf("\n+----+");
-    printf("\n|    |");
-    printf("\n|    0");
-    printf("\n|");
-    printf("\n|");
-    printf("\n|");
-    printf("\n|");
-    printf("\n+----+\n");
+    printf("\n +----+");
+    printf("\n |    |");
+    printf("\n |    0");
+    printf("\n |");
+    printf("\n |");
+    printf("\n |");
+    printf("\n |");
+    printf("\n +----+\n");
   } 
   else if (x == 2) {
     printf("\n");
-    printf("\n+----+");
-    printf("\n|    |");
-    printf("\n|    0");
-    printf("\n|   /|");
-    printf("\n|");
-    printf("\n|");
-    printf("\n|");
-    printf("\n+----+\n");
+    printf("\n +----+");
+    printf("\n |    |");
+    printf("\n |    0");
+    printf("\n |   /|");
+    printf("\n |");
+    printf("\n |");
+    printf("\n |");
+    printf("\n +----+\n");
   } 
   else if (x == 3) {
     printf("\n");
-    printf("\n+----+");
-    printf("\n|    |");
-    printf("\n|    0");
-    printf("\n|   /|\\");
-    printf("\n|");
-    printf("\n|");
-    printf("\n|");
-    printf("\n+----+\n");
+    printf("\n +----+");
+    printf("\n |    |");
+    printf("\n |    0");
+    printf("\n |   /|\\");
+    printf("\n |");
+    printf("\n |");
+    printf("\n |");
+    printf("\n +----+\n");
   }
   else if (x == 4) {
     printf("\n");
-    printf("\n+----+");
-    printf("\n|    |");
-    printf("\n|    0");
-    printf("\n|   /|\\");
-    printf("\n|   / ");
-    printf("\n|");
-    printf("\n|");
-    printf("\n+----+\n");
+    printf("\n +----+");
+    printf("\n |    |");
+    printf("\n |    0");
+    printf("\n |   /|\\");
+    printf("\n |   / ");
+    printf("\n |");
+    printf("\n |");
+    printf("\n +----+\n");
   }
   else if (x == 5) {
     printf("\n");
-    printf("\n+----+");
-    printf("\n|    |");
-    printf("\n|    0");
-    printf("\n|   /|\\");
-    printf("\n|   / \\");
-    printf("\n|");
-    printf("\n|");
-    printf("\n+----+\n");
+    printf("\n +----+");
+    printf("\n |    |");
+    printf("\n |    0");
+    printf("\n |   /|\\");
+    printf("\n |   / \\");
+    printf("\n |");
+    printf("\n |");
+    printf("\n +----+\n");
   }
   else if (x == 10) {
     printf("\n *** HANG MAN "
