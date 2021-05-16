@@ -10,18 +10,8 @@ int word_selector();
 int print_hangman(int x);
 
 // variables
-char words[][10] = {
-  "dog",
-  "cow",
-  "computer",
-  "onion",
-  "house",
-  "apple",
-  "pizza",
-  "soda",
-  "chicken",
-  "potato"
-};
+char words[][10] = {"dog",   "cow",   "computer", "onion",   "house",
+                    "apple", "pizza", "soda",     "chicken", "potato"};
 char letter[10];
 
 int i, word_index, random_number;
@@ -31,9 +21,9 @@ int guess_check;
 int hangman = 0;
 int playing = 1;
 
-//main 
+// main
 int main() {
-  //clear screen at start    
+  // clear screen at start
   system("cls");
 
   // value is generated to choose the word
@@ -102,7 +92,7 @@ int main() {
     // Clear the screen after guessing
     system("cls");
 
-    // check if guess was incorrect 
+    // check if guess was incorrect
     if (correct > guess_check) {
       printf("\nCorrect guess!");
     } else {
@@ -120,7 +110,6 @@ int main() {
         printf("_");
       }
     }
-
   }
 
   return 0;
@@ -190,7 +179,8 @@ int print_hangman(int x) {
     printf("\n|");
     printf("\n+----+\n");
   } else if (x == 10) {
-    printf("\n *** HANG MAN ******************************************************");
+    printf("\n *** HANG MAN "
+           "******************************************************");
     printf("\n      +----+");
     printf("\n      |    |");
     printf("\n      |    0");
@@ -199,16 +189,21 @@ int print_hangman(int x) {
     printf("\n      |");
     printf("\n      |");
     printf("\n      +----+\n");
-    printf("\n ********************************************************************  \n");
-    printf("\n Words: dog,cow,computer,onion,house,apple,pizza,soda,chicken,potato\n");
-    printf("\n ********************************************************************  \n");
+    printf("\n "
+           "*******************************************************************"
+           "*  \n");
+    printf("\n Words: "
+           "dog,cow,computer,onion,house,apple,pizza,soda,chicken,potato\n");
+    printf("\n "
+           "*******************************************************************"
+           "*  \n");
   }
 }
 
 // generate a number between 0 and 10
 int word_selector() {
 
-  srand((unsigned) time(NULL));
+  srand((unsigned)time(NULL));
 
   random_number = rand() % 10;
 

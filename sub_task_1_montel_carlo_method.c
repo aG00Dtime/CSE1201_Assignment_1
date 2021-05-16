@@ -2,7 +2,7 @@
 #include <stdlib.h>
 #include <time.h>
 #include <math.h>
-
+#include <conio.h>
 int points,i,inside=0;
 double x,y,r,pi;
 
@@ -37,6 +37,8 @@ for (i=0;i<points;i++){
 
 
 printf("Final calculation of Pi is after %d iterations is approximately:  %f\n",points,pi);
+printf("Press any key to exit...");
+getch();
 
 }
 
