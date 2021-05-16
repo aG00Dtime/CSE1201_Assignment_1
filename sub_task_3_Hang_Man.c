@@ -10,8 +10,8 @@ int word_selector ();
 int print_hangman(int x);
 
 // variables
-char array[][10]={"dog","cow","computer","onion","house","apple","pizza","soda","chicken","potato"};
-char letter_guessed[10];
+char words[][10]={"dog","cow","computer","onion","house","apple","pizza","soda","chicken","potato"};
+char letter[10];
 
 int i,word_index,random_number;
 int correct=0,guessed=0;
@@ -22,13 +22,18 @@ int playing=1;
 
 //main 
 int  main (){
+//clear screen at start    
+system("cls");
 
 // value is generated to choose the word
 word_index=word_selector();
-int word_length=strlen(array[word_index]);
+int word_length=strlen(words[word_index]);
 
 // intro screen with word list
 print_hangman(10);
+printf("Press any key to begin...");
+getch();
+system("cls");
 
 // word_hidden is used to check what letters have been guessed
 for ( i = 0; i < word_length; i++){
@@ -48,8 +53,8 @@ while (playing){
 
     // check to see if guesses are used up or player won
     if (correct == word_length){
-        printf("\n\nYOU WIN\n\n");
-        printf("Press any key to exit");
+        printf("\n\nYOU WIN!\n\n");
+        printf("Press any key to exit...");
         getch();
         playing=0;
         continue;
@@ -58,7 +63,7 @@ while (playing){
     if (guessed==5)
     {
         printf("\n\nYou lose\n\n");
-        printf("Press any key to exit");
+        printf("Press any key to exit...");
         getch();
         playing=0;
         continue;
@@ -67,7 +72,7 @@ while (playing){
     // ask player to guess
     printf("\n\nRemaining guesses : %d",5-guessed);
     printf("\n\nEnter a letter:");
-    scanf(" %c",letter_guessed);
+    scanf(" %c",letter);
 
     // save correct vars to check for incorrect guess
     guess_check=correct;
@@ -78,7 +83,7 @@ while (playing){
             continue;
         }
         // increase correct count if letter exists in the word
-        if (letter_guessed[0]==array[word_index][i]){
+        if (letter[0]==words[word_index][i]){
             word_hidden[i]=1;
             correct++;        
         }
@@ -101,7 +106,7 @@ while (playing){
     print_hangman(hangman);
     for(i=0;i<word_length;i++){
         if (word_hidden[i]){
-                printf("%c",array[word_index][i]);
+                printf("%c",words[word_index][i]);
             }
             else{
                 printf("_");            
