@@ -1,0 +1,203 @@
+//libs
+#include <stdio.h>
+#include <stdlib.h>
+#include <time.h>
+#include <string.h>
+
+// prototypes
+int word_selector ();
+int print_hangman(int x);
+
+
+//variables
+char array[][10]={"dog","cow","computer","onion","house","apple","pizza","soda","chicken","potato"};
+char letter_guessed[10];
+
+int i,word_index,random_number;
+int correct=0,guessed=0;
+int word_hidden[10];
+int guess_check;
+int hangman=0;
+int playing=1;
+
+//main 
+void  main (void){
+
+// value is generated to choose the word
+word_index=word_selector();
+int word_length=strlen(array[word_index]);
+
+
+print_hangman(10);
+// word_hidden is used to check what letters have been guessed
+for ( i = 0; i < word_length; i++){
+    word_hidden[i]=0;
+}
+
+//print the initial screen
+print_hangman(0);
+
+for(i=0;i<word_length;i++){
+    if(!word_hidden[i]){
+        printf("_");
+    }
+}
+
+//game loop
+while (playing){  
+
+    //check to see if guesses are used up or player won
+    if (correct == word_length){
+        printf("\n\nYOU WIN\n\n");
+        playing=0;
+        continue;
+    }
+    if (guessed==5)
+    {
+        printf("\n\nYou lose\n\n");
+        playing=0;
+        continue;
+    }
+
+    // ask player to guess
+    printf("\n\nRemaining guesses : %d",5-guessed);
+    printf("\n\nEnter a letter:");
+    scanf(" %c",letter_guessed);
+    
+
+    guess_check=correct;
+
+    for(i=0;i<word_length;i++){       
+        if(word_hidden[i]==1){
+            continue;
+        }
+        if (letter_guessed[0]==array[word_index][i]){
+            word_hidden[i]=1;
+            correct++;        
+        }
+    } 
+
+    if (correct>guess_check){        
+        printf("\nCorrect guess!");
+    }
+    else{
+        printf("\nIncorrect Guess!");
+        guessed++;
+        hangman++;   
+        
+    }
+
+    print_hangman(hangman);
+
+    for(i=0;i<word_length;i++){
+
+        if (word_hidden[i]){
+                printf("%c",array[word_index][i]);
+            }
+            else{
+                printf("_");            
+            } 
+    }
+}  
+}
+
+// function to print hanged man
+int print_hangman(int x){
+
+    if (x==0){
+        printf("\n");
+        printf("\n+----+");
+        printf("\n|    |");
+        printf("\n|");
+        printf("\n|");
+        printf("\n|");
+        printf("\n|");
+        printf("\n|");
+        printf("\n+----+\n");
+    }
+
+    else if (x==1){
+        printf("\n");
+        printf("\n+----+");
+        printf("\n|    |");
+        printf("\n|    0");
+        printf("\n|");
+        printf("\n|");
+        printf("\n|");
+        printf("\n|");
+        printf("\n+----+\n");
+
+        
+    }
+
+    else if (x==2){
+        printf("\n");
+        printf("\n+----+");
+        printf("\n|    |");
+        printf("\n|    0");
+        printf("\n|   /|");
+        printf("\n|");
+        printf("\n|");
+        printf("\n|");
+        printf("\n+----+\n");
+    }
+    else if (x==3){
+        printf("\n");
+        printf("\n+----+");
+        printf("\n|    |");
+        printf("\n|    0");
+        printf("\n|   /|\\");
+        printf("\n|");
+        printf("\n|");
+        printf("\n|");
+        printf("\n+----+\n");
+    }
+     
+    else if (x==4){
+        printf("\n");
+        printf("\n+----+");
+        printf("\n|    |");
+        printf("\n|    0");
+        printf("\n|   /|\\");
+        printf("\n|   / ");
+        printf("\n|");
+        printf("\n|");
+        printf("\n+----+\n");
+    }
+    else if (x==5){
+        printf("\n");
+        printf("\n+----+");
+        printf("\n|    |");
+        printf("\n|    0");
+        printf("\n|   /|\\");
+        printf("\n|   / \\");
+        printf("\n|");
+        printf("\n|");
+        printf("\n+----+\n");
+    }
+    else if (x==10){
+        printf("\n *** HANG MAN ******************************************************");
+        printf("\n      +----+");
+        printf("\n      |    |");
+        printf("\n      |    0");
+        printf("\n      |   /|\\");
+        printf("\n      |   / \\");
+        printf("\n      |");
+        printf("\n      |");
+        printf("\n      +----+\n");
+        printf("\n ********************************************************************  \n");
+        printf("\n Words: dog,cow,computer,onion,house,apple,pizza,soda,chicken,potato\n");
+        printf("\n ********************************************************************  \n");
+    }
+
+
+}
+// generate a number between 0 and 10
+int word_selector(){   
+
+    srand((unsigned)time(NULL));
+
+    random_number=rand() % 10;    
+
+    return random_number;
+}
