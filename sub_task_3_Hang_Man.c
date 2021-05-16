@@ -20,7 +20,7 @@ int hangman=0;
 int playing=1;
 
 //main 
-void  main (void){
+int  main (){
 
 // value is generated to choose the word
 word_index=word_selector();
@@ -99,6 +99,8 @@ while (playing){
             } 
     }
 }  
+
+return 0;
 }
 
 // function to print hanged man
