@@ -128,7 +128,8 @@ int print_hangman(int x) {
     printf("\n|");
     printf("\n|");
     printf("\n+----+\n");
-  } else if (x == 1) {
+  } 
+  else if (x == 1) {
     printf("\n");
     printf("\n+----+");
     printf("\n|    |");
@@ -138,7 +139,8 @@ int print_hangman(int x) {
     printf("\n|");
     printf("\n|");
     printf("\n+----+\n");
-  } else if (x == 2) {
+  } 
+  else if (x == 2) {
     printf("\n");
     printf("\n+----+");
     printf("\n|    |");
@@ -148,7 +150,8 @@ int print_hangman(int x) {
     printf("\n|");
     printf("\n|");
     printf("\n+----+\n");
-  } else if (x == 3) {
+  } 
+  else if (x == 3) {
     printf("\n");
     printf("\n+----+");
     printf("\n|    |");
@@ -158,7 +161,8 @@ int print_hangman(int x) {
     printf("\n|");
     printf("\n|");
     printf("\n+----+\n");
-  } else if (x == 4) {
+  }
+  else if (x == 4) {
     printf("\n");
     printf("\n+----+");
     printf("\n|    |");
@@ -168,7 +172,8 @@ int print_hangman(int x) {
     printf("\n|");
     printf("\n|");
     printf("\n+----+\n");
-  } else if (x == 5) {
+  }
+  else if (x == 5) {
     printf("\n");
     printf("\n+----+");
     printf("\n|    |");
@@ -178,7 +183,8 @@ int print_hangman(int x) {
     printf("\n|");
     printf("\n|");
     printf("\n+----+\n");
-  } else if (x == 10) {
+  }
+  else if (x == 10) {
     printf("\n *** HANG MAN "
            "******************************************************");
     printf("\n      +----+");
