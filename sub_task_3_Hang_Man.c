@@ -67,7 +67,7 @@ while (playing){
     // save correct vars to check for incorrect guess
     guess_check=correct;
 
-    // loop through letters to see it it matches player guess
+    // loop through letters to see if it matches player guess
     for(i=0;i<word_length;i++){       
         if(word_hidden[i]==1){
             continue;
