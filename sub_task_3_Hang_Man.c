@@ -62,7 +62,7 @@ while (playing){
 
     if (guessed==5)
     {
-        printf("\n\nYou lose\n\n");
+        printf("\n\nYou lose!\n\n");
         printf("Press any key to exit...");
         getch();
         playing=0;
