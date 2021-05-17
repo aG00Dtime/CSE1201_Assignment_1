@@ -80,7 +80,6 @@ int main() {
       guess_check = correct;
 
     // loop through letters to see if it matches player guess,skip ones that are already guessed
-
     for (i = 0; i < word_length; i++) {
       if (word_hidden[i] == 1) {
         continue;

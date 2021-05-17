@@ -58,8 +58,8 @@ int main(){
     printf("%dx = + (%0.2f) - (%.2f)\n\n",a,sqrt(right_side),f );
     printf("%dx = - (%0.2f) - (%.2f)\n\n",a,sqrt(right_side),f );
 
-    printf("Root 1: %0.2f\n\n",root1);
-    printf("Root 2: %0.2f\n\n",root2);
+    printf("First root is: %0.2f\n\n",root1);
+    printf("Second root is: %0.2f\n\n",root2);
  
 
 }
@@ -112,8 +112,8 @@ else if (a>1){
     printf("%0.0fx = + (%0.2f) - (%.2f)\n\n",newa,sqrt(right_side),f );
     printf("%0.0fx = - (%0.2f) - (%.2f)\n\n",newa,sqrt(right_side),f );
 
-    printf("Root 1: %0.2f\n\n",root1);
-    printf("Root 2: %0.2f\n\n",root2);
+    printf("First root is: %0.2f\n\n",root1);
+    printf("Second root is: %0.2f\n\n",root2);
 
 }
 
