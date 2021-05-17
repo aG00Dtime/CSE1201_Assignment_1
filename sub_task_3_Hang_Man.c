@@ -36,12 +36,12 @@ int main() {
   getch();
   system("cls");
 
-  // word_hidden is used to check what letters have been guessed
+  // word_hidden is used as a reference to check what letters have been guessed and to print blanks
   for (i = 0; i < word_length; i++) {
     word_hidden[i] = 0;
   }
 
-  // print the initial screen with the word blanks
+  // print the initial screen with the blanks
   print_hangman(0);
   for (i = 0; i < word_length; i++) {
     if (!word_hidden[i]) {
@@ -73,12 +73,14 @@ int main() {
     // ask player to guess
     printf("\n\n Remaining guesses : %d", 5 - guessed);
     printf("\n\n Enter a letter:");
-    scanf(" %c", letter);
+    fgets(letter,10,stdin);
+    //scanf(" %c", letter);
 
-    // save correct vars to check for incorrect guess
-    guess_check = correct;
+    // current "correct" value count is stored,a change indicates guess was correct
+      guess_check = correct;
 
-    // loop through letters to see if it matches player guess
+    // loop through letters to see if it matches player guess,skip ones that are already guessed
+
     for (i = 0; i < word_length; i++) {
       if (word_hidden[i] == 1) {
         continue;
@@ -104,7 +106,8 @@ int main() {
 
     // print new hangman image and correctly guessed letters
     print_hangman(hangman);
-    for (i = 0; i < word_length; i++) {
+    for (i = 0; i < word_length; i++) { 
+
       if (word_hidden[i]) {
         printf(" %c ", words[word_index][i]);
       } else {
@@ -207,7 +210,7 @@ int print_hangman(int x) {
   }
 }
 
-// generate a number between 0 and 10
+// generate a number between 0 and 10 - uses as the array index
 int word_selector() {
 
   srand((unsigned)time(NULL));
