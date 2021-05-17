@@ -37,26 +37,25 @@ int main(){
 
 
     // JUST PRINTING DOWN BELOW
-    printf("\n%dx^2 + (%d)x + (%d) = 0\n\n",a,b,c); 
-
+    printf("\n(%d)x^2 + (%d)x + (%d) = 0\n\n",a,b,c); 
     
     printf("Move constant to the RHS -->");
     printf("\n(%d)x^2 + (%d)x + __ = (%d)\n\n",a,b,c*-1);   
     
     printf("Take half of b, square it, then add to both sides\n");
-    printf("%dx^2 + (%d)x +  __  = (%0.2f)\n",a,b,d);
-    printf("%dx^2 + (%d)x + (%0.2f) = (%0.2f) + (%0.2f)\n\n",a,b,e,d,e);
+    printf("(%d)x^2 + (%d)x +  __  = (%0.2f)\n",a,b,d);
+    printf("(%d)x^2 + (%d)x + (%0.2f) = (%0.2f) + (%0.2f)\n\n",a,b,e,d,e);
 
     printf("Rewrite the LHS as a perfect square\n");
     printf("((%dx + (%0.2f))^2 = (%0.2f)\n\n",a,f,(right_side) );
 
     printf("Take the square root of both sides\n");
-    printf("sqrt (((%dx + (%0.2f))^2) = sqrt(%0.2f)\n\n",a,f,(right_side));
+    printf("sqrt (((%dx + (%0.2f))^2) = sqrt (%0.2f)\n\n",a,f,(right_side));
     
     printf("Isolate and solve for X\n");
-    printf("%dx + (%0.2f) = +- (%0.2f)\n\n",a,f,sqrt(right_side) );
-    printf("%dx = + (%0.2f) - (%.2f)\n\n",a,sqrt(right_side),f );
-    printf("%dx = - (%0.2f) - (%.2f)\n\n",a,sqrt(right_side),f );
+    printf("(%d)x + (%0.2f) = +- (%0.2f)\n\n",a,f,sqrt(right_side) );
+    printf("(%d)x = + (%0.2f) - (%.2f)\n\n",a,sqrt(right_side),f );
+    printf("(%d)x = - (%0.2f) - (%.2f)\n\n",a,sqrt(right_side),f );
 
     printf("First root is: %0.2f\n\n",root1);
     printf("Second root is: %0.2f\n\n",root2);
@@ -87,7 +86,7 @@ else if (a>1){
 
 
     // JUST PRINTING DOWN BELOW
-    printf("\n%dx^2 + (%d)x + (%d) = 0\n\n",a,b,c); 
+    printf("\n(%d)x^2 + (%d)x + (%d) = 0\n\n",a,b,c); 
 
     
     printf("Move constant to the RHS -->");
@@ -97,20 +96,20 @@ else if (a>1){
     printf("\n(%d/a)x^2 + (%d/a)x + __ = (%d/a)\n\n",a,b,c*-1);   
     
     printf("Take half of b, square it, then add to both sides\n");
-    printf("%0.0fx^2 + (%0.2f)x +  __  = (%0.2f)\n",newa,newb,d);
-    printf("%0.0fx^2 + (%0.2f)x + (%0.2f) = (%0.2f) + (%0.2f)\n\n",newa,newb,e,d,e);
+    printf("(%0.0f)x^2 + (%0.2f)x +  __  = (%0.2f)\n",newa,newb,d);
+    printf("(%0.0f)x^2 + (%0.2f)x + (%0.2f) = (%0.2f) + (%0.2f)\n\n",newa,newb,e,d,e);
 
 
     printf("Rewrite the LHS as a perfect square\n");
-    printf("((%0.0fx + (%0.2f))^2 = (%0.2f)\n\n",newa,f,(right_side) );
+    printf("(((%0.0f)x + (%0.2f))^2 = (%0.2f)\n\n",newa,f,(right_side) );
 
     printf("Take the square root of both sides\n");
     printf("sqrt (((%0.0fx + (%0.2f))^2) = sqrt(%0.2f)\n\n",newa,f,(right_side));
 
     printf("Isolate and solve for X\n");
-    printf("%0.0fx + (%0.2f) = +- (%0.2f)\n\n",newa,f,sqrt(right_side) );
-    printf("%0.0fx = + (%0.2f) - (%.2f)\n\n",newa,sqrt(right_side),f );
-    printf("%0.0fx = - (%0.2f) - (%.2f)\n\n",newa,sqrt(right_side),f );
+    printf("(%0.0f)x + (%0.2f) = +- (%0.2f)\n\n",newa,f,sqrt(right_side) );
+    printf("(%0.0f)x = + (%0.2f) - (%.2f)\n\n",newa,sqrt(right_side),f );
+    printf("(%0.0f)x = - (%0.2f) - (%.2f)\n\n",newa,sqrt(right_side),f );
 
     printf("First root is: %0.2f\n\n",root1);
     printf("Second root is: %0.2f\n\n",root2);
