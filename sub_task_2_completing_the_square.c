@@ -7,7 +7,9 @@ int a,b,c;
 double newa,newb,newc, d,e,f,right_side,root1,root2;
 
 int main(){
-    printf("COMPLETING THE SQUARE\n\n");
+
+    printf("COMPLETING THE SQUARE\n");
+    //get the values
     printf("\nEnter A !=0 :");
     scanf("%d",&a);
 
@@ -19,7 +21,7 @@ int main(){
 
     if (a==1){
 
-    // since a is more than 1 we divide everything by a
+    // when c is moved to rhs its polarity changes, we do this by * -1 since +*+=+, +*-=- ,-*-=+
     d=c* -1;
     
     // half of b squared
