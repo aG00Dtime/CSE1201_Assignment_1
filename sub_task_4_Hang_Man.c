@@ -36,11 +36,6 @@ int main() {
   getch();
   system("cls");
 
-  // word_hidden is used as a reference to check what letters have been guessed and to print blanks
-  for (i = 0; i < word_length; i++) {
-    word_hidden[i] = 0;
-  }
-
   // print the initial screen with the blanks
   print_hangman(0);
   for (i = 0; i < word_length; i++) {
