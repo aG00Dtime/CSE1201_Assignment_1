@@ -17,7 +17,7 @@ char letter[10];
 
 int i, word_index, random_number;
 int correct = 0, guessed = 0;
-int word_hidden[10];
+int word_hidden[10]; // [0,0,0,0,0,0,0,0,0,0,0]
 int guess_check;
 int hangman = 0;
 int playing = 1;
@@ -47,7 +47,7 @@ int main()
 		// check to see if guesses are used up or player won
 		if (correct == word_length)
 		{
-			printf("\n\n YOU WIN!\nPress any key to exit..\n");
+			printf("\n\n YOU WIN!\n Press any key to exit..\n");
 			getch();
 			playing = 0;
 			continue;
@@ -55,9 +55,8 @@ int main()
 
 		if (guessed == 5)
 		{
-			printf("\n\n You lose!\n\n");
-			printf("\n The word was %s ! \n", words[word_index]);
-			printf(" Press any key to exit...");
+			
+			printf("\n\n You lose!\n\n The word was %s !\n Press any key to exit...", words[word_index]);	
 			getch();
 			playing = 0;
 			continue;
@@ -203,8 +202,7 @@ int print_hangman(int x)
 	}
 	else if (x == 10)
 	{
-		printf("\n ***HANG MAN "
-			"******************************************************");
+		printf("\n **** HANG MAN *****************************************************");
 		printf("\n      +----+");
 		printf("\n      |    |");
 		printf("\n      |    0");
