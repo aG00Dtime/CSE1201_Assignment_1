@@ -51,16 +51,14 @@ int main()
 		{
 			printf("\n\n YOU WIN!\n Press any key to exit..\n");
 			getch();
-			playing = 0;
-			continue;
+			return 0;
 		}
 
 		if (guessed == 5)
 		{
 			printf("\n\n You lose!\n\n The word was %s !\n Press any key to exit...", words[word_index]);
 			getch();
-			playing = 0;
-			continue;
+			return 0;
 		}
 
 		// ask player to guess
