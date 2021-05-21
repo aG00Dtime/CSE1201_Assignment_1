@@ -8,7 +8,8 @@ double newa, newb, newc, d, e, f, right_side, root1, root2;
 
 void print_output(int); // output function
 
-int main() {
+int main() 
+{
 
   printf("COMPLETING THE SQUARE\n");
   //get the values
@@ -17,8 +18,8 @@ int main() {
 
   if (a<=0)// check if a is invalid
   {
-	printf("\nA must be more than 0!");
-	return 0;
+    printf("\nA must be more than 0!");
+    return 0;
   }  
 
   printf("\nEnter B:");
@@ -27,7 +28,8 @@ int main() {
   printf("\nEnter C:");
   scanf("%d", & c);
 
-  if (a == 1) {
+  if (a == 1) 
+  {
     // when c is moved to rhs its polarity changes, we do this by *-1 since +*+=+, +*-=- ,-*-=+
     d = c * -1;
 
@@ -45,7 +47,9 @@ int main() {
     // JUST PRINTING DOWN BELOW
     print_output(a);
 
-  } else if (a > 1) {
+  } 
+  else if (a > 1) 
+  {
     // since a is more than 1 we divide everything by a
     newa = (double) a / (double) a;
     newb = (double) b / (double) a;
@@ -74,7 +78,8 @@ int main() {
   return 0;
 }
 
-void print_output(int val_a) {
+void print_output(int val_a) 
+{
 
   // JUST PRINTING DOWN BELOW
   printf("\n(%d)x^2 + (%d)x + (%d) = 0\n\n", a, b, c);
@@ -82,7 +87,8 @@ void print_output(int val_a) {
   printf("Move constant to the RHS -->");
   printf("\n(%d)x^2 + (%d)x + __ = (%d)\n", a, b, c * -1);
 
-  if (val_a > 1) {
+  if (val_a > 1) 
+  {
     printf("\nA != 1, so divide by A, %d", a);
     printf("\n(%d/a)x^2 + (%d/a)x + __ = (%d/a)\n\n", a, b, c * -1);
   }
