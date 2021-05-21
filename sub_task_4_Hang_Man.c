@@ -10,17 +10,19 @@ int word_selector();	//random number to select a random word
 int print_hangman(int);	// prints hangman image
 int word_print(int, int);	//prints word with blanks and hangman image
 
-// variables 
+// variables
 char words[][10] = { "dog", "cow", "computer", "onion", "house",
 	"apple", "pizza", "soda", "chicken", "potato" };
+//to hold the letter guessed
 char letter[10];
 
 int i, word_index, random_number;
 int correct = 0, guessed = 0;
-int word_hidden[10]; // [0,0,0,0,0,0,0,0,0,0,0]
+int word_hidden[10];	//[0,0,0,0,0,0,0,0,0,0,0]
 int guess_check;
 int hangman = 0;
 int playing = 1;
+int chances = 5;
 
 // main
 int main()
@@ -34,7 +36,7 @@ int main()
 
 	// intro screen with word list
 	print_hangman(10);
-	printf("\nPress any key to begin...");
+	printf("\n Press any key to begin...");
 	getch();
 	system("cls");
 
@@ -55,15 +57,14 @@ int main()
 
 		if (guessed == 5)
 		{
-			
-			printf("\n\n You lose!\n\n The word was %s !\n Press any key to exit...", words[word_index]);	
+			printf("\n\n You lose!\n\n The word was %s !\n Press any key to exit...", words[word_index]);
 			getch();
 			playing = 0;
 			continue;
 		}
 
 		// ask player to guess
-		printf("\n\n Remaining guesses : %d \n\n Enter a letter:", 5 - guessed);
+		printf("\n\n Remaining guesses : %d \n\n %d letter word \n\n Enter a letter:", chances - guessed, word_length);
 		fgets(letter, 10, stdin);
 
 		// current "correct" value count is stored,a change indicates guess was correct
@@ -100,7 +101,7 @@ int main()
 			hangman++;
 		}
 
-		// print new hangman image and correctly guessed letters    
+		// print new hangman image and correctly guessed letters
 		word_print(hangman, word_length);
 	}
 
@@ -202,7 +203,7 @@ int print_hangman(int x)
 	}
 	else if (x == 10)
 	{
-		printf("\n **** HANG MAN *****************************************************");
+		printf("\n ****HANG MAN *****************************************************");
 		printf("\n      +----+");
 		printf("\n      |    |");
 		printf("\n      |    0");
@@ -213,12 +214,12 @@ int print_hangman(int x)
 		printf("\n      +----+\n");
 		printf("\n "
 			"*******************************************************************"
-			"* \n");
+			"*\n");
 		printf("\n Words: "
 			"dog,cow,computer,onion,house,apple,pizza,soda,chicken,potato\n");
 		printf("\n "
 			"*******************************************************************"
-			"* \n");
+			"*\n");
 	}
 }
 
