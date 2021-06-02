@@ -2,7 +2,7 @@
 #include <stdlib.h>
 #include <time.h>
 #include <math.h>
-#include <conio.h>
+
 
 int points, i, inside = 0;
 double x, y, r, py;
@@ -10,6 +10,7 @@ double x, y, r, py;
 int main()
 {
 	printf("How many values of Pi to generate ? : ");
+
 	scanf("%d", &points);
 
 	// srand takes a seed number that is used to generate random numbers 
@@ -23,8 +24,8 @@ int main()
 		// we're generating values between 0 and 1 to create the circle (r2=x2+y2)
 		// divide rand/randmax to get values between 0 and 1
 
-		x = (double) rand() / (double) RAND_MAX;
-		y = (double) rand() / (double) RAND_MAX;
+		x = (double) rand() / RAND_MAX;
+		y = (double) rand() / RAND_MAX;
 
 		r = (pow(x, 2) + pow(y, 2));	// no need for sqrt since we're checking to see if r < 1 to determine if the point is inside the circle
 
@@ -33,13 +34,13 @@ int main()
 			inside++;
 		}
 
-		py = 4 *(double) inside / (double) points;	//4 *inside count / total sample size = approx py
+		py = 4 * (double) inside /  points;	//4 *inside count / total sample size = approx py
+
 		printf("Calculation #%d : %f\n", i + 1, py);
 	}
 
 	printf("Final calculation of Pi after %d iterations is approximately:  %f\n", points, py);
-	printf("Press any key to exit...");
-	getch();
+	
 	return 0;
 }
 

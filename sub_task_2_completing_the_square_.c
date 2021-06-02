@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <math.h>
-#include <conio.h>
-	// ax^2 + bx + c = 0
+
+// ax^2 + bx + c = 0
 
 int a, b, c;
 double newa, newb, newc, d, e, f, right_side, root1, root2;
@@ -111,8 +111,8 @@ int main()
 
 	}
 
-	printf("press any key to exit...");
-	getch();
+	
+	
 
 	return 0;
 }
