@@ -63,9 +63,9 @@ int main()
 	else if (a > 1)
 	{
 		// since a is more than 1 we divide everything by a
-		newa = (double) a / (double) a;
-		newb = (double) b / (double) a;
-		newc = (double) c / (double) a;
+		newa = (double) a / a;
+		newb = (double) b / a;
+		newc = (double) c / a;
 
 		// when c is moved to rhs its polarity changes, we do this by *-1 since +*+=+, +*-=- ,-*-=+
 		d = newc *-1;
