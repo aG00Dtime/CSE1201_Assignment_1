@@ -1,3 +1,9 @@
+// Group Members
+// David Henry - 1007604
+// Rockel London - 1037481
+
+
+
 #include <stdio.h>
 #include <stdlib.h>
 #include <time.h>
