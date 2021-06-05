@@ -1,6 +1,6 @@
 // Group Members
 // David Henry - 1007604
-// Rockel London - 1037481
+// Rockell London - 1037481
 
 #include <stdio.h>
 #include <math.h>
